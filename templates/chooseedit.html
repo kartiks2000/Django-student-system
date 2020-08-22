@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block headheading %}
+    Edit
+{% endblock headheading %}
+
+
+{% block main %}
+    <div style='padding:1rem; text-align:center'>
+        <h1 style='text-transform: uppercase; color: orangered'>Edit -: </h1>
+    </div>
+    
+    <h2>Please choose the student name to edit -: </h2>
+    <form method="post" action="/choosenid/">
+    {% csrf_token %}
+    <select name="sid">
+    {% for i in myl %}
+        <option value="{{i.id}}">{{i.firstname}} {{i.lastname}}</option>
+    {% endfor %}
+    </select>
+    <input type="submit" value="EDIT"/>
+    </form>
+{% endblock main %}

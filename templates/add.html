@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block headheading %}
+    Add
+{% endblock headheading %}
+
+{% block main %}
+    <div style='padding:1rem; text-align:center'>
+        <h1 style='text-transform: uppercase; color: orangered'>ADD student -: </h1>
+    </div>
+    <form style='margin: 2rem' method="post" action="">
+      {% csrf_token %%}
+        {{form.as_p}}
+        <input type="submit" value="ADD"/>
+    </form>
+{% endblock main %} 

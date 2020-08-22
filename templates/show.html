@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% block headheading %}
+    Show
+{% endblock headheading %}
+
+
+{% block main %}
+    <div style='padding:1rem; text-align:center'>
+        <h1 style='text-transform: uppercase; color: orangered'>All Students -: </h1>
+    </div>
+    {% for i in myl %}
+        <div style='margin:4rem'>
+            <h1> NAME : {{i.firstname | capfirst}} {{i.lastname | capfirst}} </h1>
+            <h2> COURSE : {{i.course | upper}} </h2>
+            <a href="/del/{{i.id}}">DELETE</a>
+            <a style='margin:.5rem 1rem' href="/edit/{{i.id}}">EDIT</a>
+        </div>
+    {% endfor %}
+{% endblock main %}
